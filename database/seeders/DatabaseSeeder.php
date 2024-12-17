@@ -4,8 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\Article;
 use App\Models\User;
+use App\Models\UserPreferences;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Laravel\Sanctum\Sanctum;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,5 +18,6 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(5)->create();
         Article::factory(5)->create();
+        UserPreferences::factory(5)->create();
     }
 }
