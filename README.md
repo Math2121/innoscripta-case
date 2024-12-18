@@ -48,9 +48,14 @@ Generate the Laravel project key
 php artisan key:generate
 ```
 
+Run migrations
+```sh
+php artisan migrate
+```
 
 Access the project
 [http://localhost:9000](http://localhost:9000)
+
 
 Access the documentation
 [http://localhost:9000/api/documentation](http://localhost:9000/api/documentation)
