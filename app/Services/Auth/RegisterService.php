@@ -12,8 +12,6 @@ class RegisterService
     {
 
         try {
-            //code...
-
             $user = User::create([
                 'name' => $name,
                 'email' => $email,
