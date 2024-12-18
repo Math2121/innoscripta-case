@@ -12,7 +12,7 @@ class NewsApiService
     protected $client;
     private $apiKey = "934f6192367544d8bd10c4d256adfb84";
 
-    public function fetchTopHeadlines()
+    public function execute()
     {
         $newsapi = new NewsApi($this->apiKey);
 
@@ -20,11 +20,12 @@ class NewsApiService
         $articles = [];
         foreach ($topHeadlines->articles as $article) {
             $transformedArticle = [
-                'source' => $article['source']['name'],
-                'author' => $article['author'],
-                'title' => $article['title'],
-                'url' => $article['url'],
-                "category" => "general"
+                'source' => $article->source->name,
+                'author' => $article->author,
+                'title' => $article->title,
+                'url' => $article->url,
+                "category" => "general",
+                "date" => $article->publishedAt,
             ];
 
             $articles[] = $transformedArticle;
