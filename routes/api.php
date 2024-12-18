@@ -13,9 +13,9 @@ Route::prefix('user')->group(function () {
 });
 
 Route::prefix("article")->group(function () {
-    Route::get('/', [ArticleController::class, 'index']);
-    Route::get('/{id}', [ArticleController::class, 'show']);
-})->middleware("auth:sanctum");
+    Route::get('/', [ArticleController::class, 'index'])->middleware("auth:sanctum");
+    Route::get('/{id}', [ArticleController::class, 'show'])->middleware("auth:sanctum");
+});
 
 
 Route::middleware('auth:sanctum')->prefix('preferences')->group(function () {
