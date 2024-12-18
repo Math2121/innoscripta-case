@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    command: php artisan schedule:run
+    volumes:
+      - .:/var/www/html/
+    networks:
+        - docker-network
+    ports:
+      - 9000:9000
+
+networks:
+  docker-network:
+    driver: bridge
