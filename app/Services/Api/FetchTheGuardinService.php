@@ -18,7 +18,7 @@ class FetchTheGuardinService
         $this->client =  Http::get("https://content.guardianapis.com/search?q=education&api-key=" . $this->apiKey);
     }
 
-    public function fetchTopHeadlines()
+    public function execute()
     {
 
         $articles = [];
@@ -31,7 +31,8 @@ class FetchTheGuardinService
                 'author' => "The Guardian",
                 'title' => $article['webTitle'],
                 'url' => $article['webUrl'],
-                "category" => "education"
+                "category" => "education",
+                "date" => $article['webPublicationDate'],
 
             ];
 

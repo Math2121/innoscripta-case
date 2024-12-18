@@ -18,7 +18,7 @@ class FetchNewYorkService
         $this->client =  Http::get("https://api.nytimes.com/svc/archive/v1/2024/1.json?api-key=" . $this->apiKey);
     }
 
-    public function fetchTopHeadlines()
+    public function execute()
     {
 
         $articles = [];
@@ -33,6 +33,8 @@ class FetchNewYorkService
                 'title' => $article['abstract'],
                 'url' => $article['web_url'],
                 "category" => $article['section_name'],
+                "date" =>
+                $article['pub_date'],
 
             ];
 
