@@ -53,6 +53,12 @@ Run migrations
 php artisan migrate
 ```
 
+Run the schedule 
+```sh
+php artisan schedule:run
+```
+
+
 Access the project
 [http://localhost:9000](http://localhost:9000)
 
